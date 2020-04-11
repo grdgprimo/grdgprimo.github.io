@@ -1,0 +1,104 @@
+
+body{
+    margin: 0;
+    z-index: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header{
+    position: fixed;
+    top:0;
+    height: 100px;
+    width: 100%;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+button{
+    display: block;
+    width: 200px;
+    height: 75px;
+    margin: 10px;
+    background-color: grey;
+    border: 0;
+}
+
+button:hover{
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+div{
+    display: flex;
+    margin-top: 100px;
+}
+
+.sideContent{
+    background-color: lightgrey;
+}
+
+.mainContent{
+    overflow: auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h3
+{
+    text-align: center;
+    font-family: 'Girassol', cursive;
+}
+
+p{
+    text-align: justify;
+    
+    margin: auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+li:hover{
+    text-shadow: 0px 0px black;
+    background-color: grey;
+}
+
+.quote{
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    
+}
+
+.quote p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.quote a{
+    font-weight: normal;
+}
+
+.paragraph
+{
+    margin: 0;
+    
+}
+
