@@ -73,7 +73,7 @@ $(document).on('click', 'li', function(){
     let index = 0;
     if(active === "characters")
     {
-        while(characters[index].name.localeCompare($(this).text())!=true)
+        while(characters[index].name.trim()!==$(this).text().trim())
         {
             index++;
         }
@@ -85,9 +85,9 @@ $(document).on('click', 'li', function(){
             `
         )
     }
-    if(active === "story")
+    else
     {
-        while(stories[index].name.localeCompare($(this).text())!=true)
+        while(stories[index].name.trim()!==$(this).text().trim())
         {
             index++;
         }
