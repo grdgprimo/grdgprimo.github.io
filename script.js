@@ -85,7 +85,7 @@ $(document).on('click', 'li', function(){
             `
         )
     }
-    if(active === "stories")
+    if(active === "story")
     {
         while(stories[index].name.localeCompare($(this).text())!=true)
         {
