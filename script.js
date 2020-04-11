@@ -70,7 +70,6 @@ $(function()
 // Select menu item
 $(document).on('click', 'li', function(){
     $('.mainContent').empty();
-    
     let index = 0;
     if(active === "characters")
     {
@@ -86,7 +85,7 @@ $(document).on('click', 'li', function(){
             `
         )
     }
-    else
+    if(active === "stories")
     {
         while(stories[index].name.localeCompare($(this).text())!=true)
         {
