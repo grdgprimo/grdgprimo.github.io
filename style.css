@@ -120,17 +120,19 @@ li:hover{
     
 }
 .imageContainer{
-    width: 75%;
+    width: 95%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .imageHolder{
-    width: 15%;
+    width: auto;
+    max-width: 250px;
     height: auto;
+    max-height: 250px;
     margin-top: 0;
 }
 
@@ -153,6 +155,7 @@ li:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .bigImageContainer img{
