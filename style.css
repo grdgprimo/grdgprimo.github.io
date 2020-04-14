@@ -129,8 +129,8 @@ li:hover{
 }
 
 .imageHolder{
-    width: 20%;
-    height: 150px;;
+    width: 15%;
+    height: auto;
     margin-top: 0;
 }
 
@@ -153,4 +153,8 @@ li:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.bigImageContainer img{
+    width: 100%;
 }
