@@ -74,7 +74,7 @@ h4 p{
 .paragraph, .quote{
     text-align: justify;
     
-    margin: auto;
+    margin: 0;
 }
 
 ul{
@@ -96,7 +96,7 @@ li:hover{
 .quote{
     border-radius: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     margin-top: 0;
     display: block;
     margin-left: auto;
@@ -108,6 +108,11 @@ li:hover{
 .quote p{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .quote a{
