@@ -70,7 +70,7 @@ $(function()
 });
 
 // Select menu item
-$(document).on('click', 'li', function(){
+$(document).on('click', '#sideMenu li', function(){
     $('.mainContent').empty();
     let index = 0;
     if(active === "characters")
@@ -110,7 +110,6 @@ $(document).on('click', 'li', function(){
     
     $('#sideMenu li').remove();
     $('#sideMenu').css('width','0');
-
  });
 
  // Remove menu 

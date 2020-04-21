@@ -77,18 +77,23 @@ h4 p{
     margin: 0;
 }
 
+
 ul{
     margin: 0;
     padding: 0;
 }
 
 li{
+    margin-left: 20px;
+}
+
+#sideMenu li{
     list-style-type: none;
     margin-bottom: 10px;
     padding: 10px;
 }
 
-li:hover{
+#sideMenu li:hover{
     text-shadow: 0px 0px black;
     background-color: grey;
 }
