@@ -7,6 +7,7 @@ function getFile(id)
 {
     let filepath = id+".txt";
     active = id;
+    $('.dropdown-menu').empty();
     $.get(filepath,function(txt)
     {
         var lines = txt.split("\n");
@@ -14,7 +15,7 @@ function getFile(id)
         {
             for (let index = 0; index < lines.length; index+=4) 
             {
-                $('#sideMenu').append(`<li>${lines[index]}</li>`);
+                $('#charactersMenu').append(`<a class="dropdown-item" href="#">${lines[index]}</a><div class="dropdown-divider"></div>`);
                 characters.push(createNewPerson(lines[index].trim(),lines[index+1].trim(),lines[index+2].trim(),lines[index+3]));
                 
             }
@@ -23,7 +24,7 @@ function getFile(id)
         {
             for (let index = 0; index < lines.length; index+=3) 
             {
-                $('#sideMenu').append(`<li>${lines[index]}</li>`);
+                $('#storyMenu').append(`<a class="dropdown-item" href="#">${lines[index]}</a><div class="dropdown-divider"></div>`);
                 $.get(lines[index+1]+".html", function(data) {
                     stories.push(createNewStory(lines[index],data,lines[index+1],lines[index+2]));
                  }, 'text');
@@ -58,28 +59,31 @@ function createNewStory(name, data, id, imageCount)
 }
 
 
-// Show menu
+// FillMenu
 $(function()
 {
-    $('button').click(function()
+    $('.nav-link.dropdown-toggle').click(function()
     {
-        $('#sideMenu li').remove();
+        
+        console.log(this.id);
         getFile(this.id);
-        $('#sideMenu').css('width','400');
     });
 });
 
 // Select menu item
-$(document).on('click', '#sideMenu li', function(){
-    $('.mainContent').empty();
+$(document).on('click', '.dropdown-item', function(){
+    $('.container').empty();
     let index = 0;
+    /*$("button").attr('class', 'navbar-toggler collapsed');
+    $("button").attr('aria-expanded', 'false');*/
+    /*$("#navbarSupportedContent").attr('class', 'navbar-toggler collapsing');*/
     if(active === "characters")
     {
         while(characters[index].name.trim()!==$(this).text().trim())
         {
             index++;
         }
-        $('.mainContent').append(
+        $('.container').append(
             `
             <h1>${characters[index].name}</h1>
             <h3>${characters[index].title}</h3>
@@ -89,7 +93,8 @@ $(document).on('click', '#sideMenu li', function(){
         )
         for(let i=0; i<characters[index].imageCount; i++)
         {
-            $('.imageContainer').append(`<div class="imageHolder"><img src="images/${characters[index].name.trim()+i}.jpg" class="image" title="${characters[index].name.trim()+i}"></div>`);
+            $('.imageContainer').append(`<div class="imageHolder" title="${characters[index].name.trim()+i}" style="background-image:url('../images/${characters[index].name.trim()+i}.jpg')"></div>`);
+            
         }
     }
     else
@@ -99,27 +104,19 @@ $(document).on('click', '#sideMenu li', function(){
             index++;
         }
 
-        $('.mainContent').append(`<h1>${stories[index].name}</h1>${stories[index].data} <div class="imageContainer"></div>`);
+        $('.container').append(`<h1>${stories[index].name}</h1>${stories[index].data} <div class="imageContainer"></div>`);
         for(let i=0; i<stories[index].imageCount; i++)
         {
-            $('.imageContainer').append(`<div class="imageHolder"><img src="images/${stories[index].id.trim()+i}.jpg" class="image" title="${stories[index].id.trim()+i}"></div>`);
+            $('.imageContainer').append(`<div class="imageHolder" title="${stories[index].id.trim()+i}" style="background-image:url('../images/${stories[index].id.trim()+i}.jpg')"></div>`);
         }
 
 
     }
-    
-    $('#sideMenu li').remove();
-    $('#sideMenu').css('width','0');
  });
 
- // Remove menu 
- $(document).on('click', '.mainContent', function(){
-    $('#sideMenu li').remove();
-    $('#sideMenu').css('width','0');
- });
-
- $(document).on('click','.image', function()
+//show big image
+ $(document).on('click','.imageHolder', function()
  {
     $('.bigImageContainer').remove();
-    $('.mainContent').append(`<div class="bigImageContainer"><img src="images/${this.title}.jpg"></div>`)
+    $('.container').append(`<div class="bigImageContainer"><img src="images/${this.title}.jpg"></div>`)
  });
