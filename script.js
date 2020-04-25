@@ -93,7 +93,7 @@ $(document).on('click', '.dropdown-item', function(){
         )
         for(let i=0; i<characters[index].imageCount; i++)
         {
-            $('.imageContainer').append(`<div class="imageHolder" title="${characters[index].name.trim()+i}" style="background-image:url('../images/${characters[index].name.trim()+i}.jpg')"></div>`);
+            $('.imageContainer').append(`<div class="imageHolder" title="${characters[index].name.trim()+i}" style="background-image:url("../images/${characters[index].name.trim()+i}.jpg")"></div>`);
             
         }
     }
@@ -107,7 +107,7 @@ $(document).on('click', '.dropdown-item', function(){
         $('.container').append(`<h1>${stories[index].name}</h1>${stories[index].data} <div class="imageContainer"></div>`);
         for(let i=0; i<stories[index].imageCount; i++)
         {
-            $('.imageContainer').append(`<div class="imageHolder" title="${stories[index].id.trim()+i}" style="background-image:url('../images/${stories[index].id.trim()+i}.jpg')"></div>`);
+            $('.imageContainer').append(`<div class="imageHolder" title="${stories[index].id.trim()+i}" style="background-image:url("../images/${stories[index].id.trim()+i}.jpg")"></div>`);
         }
 
 
